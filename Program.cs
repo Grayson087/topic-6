@@ -8,10 +8,23 @@ namespace topic_6
         {
 
 
-            bad();
-             better();
-             dice();
-            magic();
+            Bad();
+            Console.WriteLine("Press ENTER to continue.");
+            Console.ReadLine();
+            Console.Clear();
+
+            Better();
+            Console.WriteLine("Press ENTER to continue.");
+            Console.ReadLine();
+            Console.Clear();
+
+
+            Dice();
+            Console.WriteLine("Press ENTER to continue.");
+            Console.ReadLine();
+            Console.Clear();
+
+            Magic();
             
         
         
@@ -24,7 +37,7 @@ namespace topic_6
 
 
 
-        public static void bad()
+        public static void Bad()
         {
 
             //BAD GUESSING GAME
@@ -39,66 +52,76 @@ namespace topic_6
             Console.WriteLine("Your number is " + randnum);
         }
 
-        public static void better()
+        public static void Better()
         {
             int randnum, pick;
             Random Genertor = new Random();
-            randnum = Genertor.Next(0, 11);
-            Console.WriteLine(" Welcome to the best guessing game of all time pick a number between 1 and 10");
+            randnum = Genertor.Next(1, 11);
+            Console.WriteLine("Welcome to the best guessing game of all time pick a number between 1 and 10");
             int.TryParse(Console.ReadLine(), out pick);
-             if (pick >= 10)
+            if (pick > 10)
             {
-                Console.WriteLine("invalid imput try again");
+                Console.WriteLine("Invalid input");
             }
-            else if (pick <= 1)
+            else if (pick < 1)
             {
-                Console.WriteLine("invalid imput try again");
+                Console.WriteLine("Invalid input");
             }
             else if (randnum != pick)
             {
                 Console.WriteLine("WRONG you picked " + pick + " the number was " + randnum);
             }
-            else if (randnum == pick)
+            else
             {
-                Console.WriteLine("correct " + pick + " was the number");
+                Console.WriteLine("Correct " + pick + " was the number");
             }
            
            
 
         }
-        public static void dice()
+        public static void Dice()
         {
+            Random Genertor = new Random();
+
             int dice1, dice2, sum;
             string ans;
             Console.WriteLine("Welcome to the dice roller you wanna roll? \n yes/no");
             ans = Console.ReadLine().ToUpper();
-            if ( ans  == "YES"){
+            if (ans == "YES")
+            {
 
 
-                Random Genertor = new Random();
-                dice1 = Genertor.Next(0, 7);
-                dice2 = Genertor.Next(0, 7);
+                dice1 = Genertor.Next(1, 7);
+                dice2 = Genertor.Next(1, 7);
                 sum = dice1 + dice2;
                 Console.WriteLine(" You rolled " + dice1 + " and " + dice2 + " so you would have " + sum);
             }
 
-            else if ( ans == "NO")
+            else if (ans == "NO")
             {
                 Console.WriteLine("WHAT WHY???????");
+            }
+            else {
+
+                Console.WriteLine("Not one of the valid imputs");
+            
+            
             }
         
         
         }
       
-        public static void magic()
+        public static void Magic()
         {
             string ask;
             int ball;
             Random Genertor = new Random();
+
             Console.WriteLine("Welcome to the magic 8 ball");
-             Console.WriteLine("ask any yes/no question");
+            Console.WriteLine("ask any yes/no question");
             ask = Console.ReadLine(); 
-            ball = Genertor.Next(0,11);
+
+            ball = Genertor.Next(1,11);
             // good answers
             if (ball == 1)
             {
@@ -151,7 +174,7 @@ namespace topic_6
                 
                 Console.WriteLine("Verry doubtfull");
             }
-            else if (ball == 10)
+            else
             {
                 
                 Console.WriteLine("Outlook not so good");
